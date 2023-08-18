@@ -61,7 +61,9 @@ class _HomePageState extends State<HomePage> {
           .toList();
       // we use the toLowerCase() method to make it case-insensitive
     }
-
+    setState(() {
+      _foundUsers = results;
+    });
   }
 
   @override
@@ -99,11 +101,11 @@ class _HomePageState extends State<HomePage> {
                       _foundUsers[index]["id"].toString(),
                       style: const TextStyle(fontSize: 24, color:Colors.white),
                     ),
-                    title: Text(_foundUsers[index]['name'], style:TextStyle(
+                    title: Text(_foundUsers[index]['name'], style:const TextStyle(
                       color:Colors.white
                     )),
                     subtitle: Text(
-                        '${_foundUsers[index]["age"].toString()} years old',style:TextStyle(
+                        '${_foundUsers[index]["age"].toString()} years old',style:const TextStyle(
                         color:Colors.white
                     )),
                   ),
